@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPŠT E-sport – Domovská stránka</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Hlavička -->
+  <header>
+    <div class="logo">SPŠT E-sport</div>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#">Domů</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#hraci">Hráči</a></li>
+        <li><a href="#clanky">Články</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+</header>
+
+  <!-- Úvodní sekce -->
+  <section class="hero">
+    <img src="img/obrazek.jpg" alt="E-sport background" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content"></div>
+      <h1>Vítejte na stránkách <br>SPŠT E-sport týmu</h1>
+      <p>
+        Vítejte na oficiálních stránkách školního E-sport týmu SPŠT. Sledujte naše zápasy,
+        seznamte se s hráči a čtěte novinky ze středoškolské ligy.
+      </p>
+      <div class="hero-buttons">
+        <a href="#program" class="btn">Program zápasů</a>
+        <a href="#kontakt" class="btn">Kontaktujte nás</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM SEKCE -->
+  <section id="program" class="program-section">
+    <h2>Program zápasů</h2>
+
+    <div class="matches">
+      <div class="match-card">
+        <div class="match-info">
+          <h3>SPŠT E-sport vs. Gymnázium Třebíč</h3>
+          <p>Hra: Valorant</p>
+          <p>Datum: 20. listopadu 2025</p>
+          <p>Čas: 18:00</p>
+        </div>
+        <div class="match-status upcoming">Nadcházející zápas</div>
+      </div>
+
+      <div class="match-card">
+        <div class="match-info">
+          <h3>SPŠT E-sport vs. SOŠ Brno</h3>
+          <p>Hra: League of Legends</p>
+          <p>Datum: 10. listopadu 2025</p>
+          <p>Čas: 17:30</p>
+        </div>
+        <div class="match-status finished">Výsledek: 2 : 1</div>
+      </div>
+
+      <div class="match-card">
+        <div class="match-info">
+          <h3>SPŠT E-sport vs. Gymnázium Znojmo</h3>
+          <p>Hra: Counter-Strike 2</p>
+          <p>Datum: 28. listopadu 2025</p>
+          <p>Čas: 19:00</p>
+        </div>
+        <div class="match-status upcoming">Nadcházející zápas</div>
+      </div>
+    </div>
+  </section>
+    <!-- KONTAKTNÍ SEKCE -->
+    <section id="kontakt" class="contact-section">
+        <h2>Kontaktujte nás</h2>
+        <p class="contact-text">
+          Máte dotaz nebo se chcete přidat do týmu? Napište nám přes formulář níže!
+        </p>
+    
+        <form>
+          <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+          <input type="email" name="email" placeholder="Váš e-mail" required>
+          <textarea name="zprava" placeholder="Vaše zpráva" rows="5" required></textarea>
+          <button type="submit">Odeslat</button>
+        </form>
+      </section>
+    
+
+  <!-- Patička -->
+  <footer>
+    &copy; 2025 SPŠT E-sport Tým | Všechna práva vyhrazena.
+  </footer>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-menu");
+  
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
