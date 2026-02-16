@@ -604,4 +604,279 @@ button[type="submit"]:hover {
     height: 130px;
   }
 }
+/* =========================
+   PLAYOFF (PAVOUK)
+========================= */
+.playoff-section {
+  background: rgba(12, 12, 16, 0.9);
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.playoff-section h2 {
+  font-size: 36px;
+  color: var(--accent-hover);
+  margin-bottom: 10px;
+}
+
+.playoff-subtitle {
+  color: var(--text-muted);
+  max-width: 900px;
+  margin: 0 auto 35px auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bracket-wrap {
+  overflow-x: auto;      
+  padding-bottom: 10px;
+}
+
+.bracket {
+  --line: rgba(255,255,255,0.14);
+  --line-strong: rgba(149,117,205,0.35);
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+
+  min-width: 1100px;     
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  padding: 20px 10px;
+}
+
+.round-title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: var(--text-main);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.bracket-side {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.bracket-side.left {
+  flex-direction: row;
+}
+
+.bracket-side.right {
+  flex-direction: row-reverse; 
+}
+
+.bracket-center {
+  display: flex;
+  align-items: center;
+}
+
+.round {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  position: relative;
+}
+
+/* Match box */
+.match {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  padding: 12px 14px;
+  text-align: left;
+  position: relative;
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.match .team {
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.match .team + .team {
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.match.winner {
+  border-color: rgba(149,117,205,0.25);
+}
+
+
+.pair {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+.slot {
+  position: relative;
+  display: flex;
+}
+
+/
+.bracket-side.left .pair::before {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 36px;                 
+  height: calc(72px + 14px); /
+  width: 2px;
+  background: var(--line);
+}
+
+.bracket-side.left .pair::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: calc(36px + (72px + 14px)/2);
+  width: 18px;
+  height: 2px;
+  background: var(--line);
+}
+
+
+.bracket-side.left .slot::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  background: var(--line);
+}
+
+
+.bracket-side.right .pair::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 36px;
+  height: calc(72px + 14px);
+  width: 2px;
+  background: var(--line);
+}
+
+.bracket-side.right .pair::after {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: calc(36px + (72px + 14px)/2);
+  width: 18px;
+  height: 2px;
+  background: var(--line);
+}
+
+.bracket-side.right .slot::before {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  background: var(--line);
+}
+
+
+.bracket-side .round::after {
+  content: "";
+  position: absolute;
+  top: 58px;
+  bottom: 30px;
+  width: 2px;
+  background: rgba(255,255,255,0.06);
+}
+
+.bracket-side.left .round::after { right: -30px; }
+.bracket-side.right .round::after { left: -30px; }
+
+
+.bracket-side.left .round.qf { padding-top: 52px; }
+.bracket-side.left .round.sf { padding-top: 140px; }
+
+.bracket-side.right .round.qf { padding-top: 52px; }
+.bracket-side.right .round.sf { padding-top: 140px; }
+
+
+.round.final {
+  width: 320px;
+  gap: 18px;
+}
+
+.final-match {
+  border-color: rgba(149,117,205,0.35);
+}
+
+
+.bracket-center .slot {
+  position: relative;
+}
+
+.bracket-center .slot::before,
+.bracket-center .slot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: var(--line);
+}
+
+.bracket-center .slot::before { left: -20px; }
+.bracket-center .slot::after  { right: -20px; }
+
+
+.champ-card {
+  margin-top: 10px;
+  background: rgba(126,87,194,0.12);
+  border: 1px solid rgba(149,117,205,0.25);
+  border-radius: 14px;
+  padding: 18px 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.trophy {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.champ-name {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--text-main);
+}
+
+.champ-desc {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Mobil – pavouk se posouvá scrollováním */
+@media (max-width: 900px) {
+  .playoff-section { padding: 60px 18px; }
+  .playoff-section h2 { font-size: 30px; }
+}
+
 
