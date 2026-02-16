@@ -628,7 +628,7 @@ button[type="submit"]:hover {
 }
 
 .bracket-wrap {
-  overflow-x: auto;      
+  overflow-x: auto;      /* na mobilu scroll */
   padding-bottom: 10px;
 }
 
@@ -732,13 +732,13 @@ button[type="submit"]:hover {
   display: flex;
 }
 
-/
+
 .bracket-side.left .pair::before {
   content: "";
   position: absolute;
   right: -18px;
   top: 36px;                 
-  height: calc(72px + 14px); /
+  height: calc(72px + 14px); 
   width: 2px;
   background: var(--line);
 }
