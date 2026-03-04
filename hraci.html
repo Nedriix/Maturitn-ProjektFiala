@@ -92,5 +92,48 @@
       </div>
     </div>
   </section>
+
+  <script>
+
+    const players = JSON.parse(localStorage.getItem("players")) || [];
+    
+    const container = document.querySelector(".players-grid");
+    
+    players.forEach(player => {
+    
+    const card = document.createElement("article");
+    
+    card.classList.add("player-card");
+    
+    card.innerHTML = `
+    
+    <img src="${player.photo}" class="player-photo">
+    
+    <div class="player-body">
+    
+    <div class="player-top">
+    <h4 class="player-name">${player.name}</h4>
+    <span class="player-role">${player.role}</span>
+    </div>
+    
+    <p class="player-desc">${player.desc}</p>
+    
+    <div class="player-socials">
+    
+    ${player.instagram ? `<a class="social-link" href="${player.instagram}" target="_blank">Instagram</a>` : ""}
+    
+    ${player.twitch ? `<a class="social-link" href="${player.twitch}" target="_blank">Twitch</a>` : ""}
+    
+    </div>
+    
+    </div>
+    
+    `;
+    
+    container.appendChild(card);
+    
+    });
+    
+    </script>
 </body>
 </html>
