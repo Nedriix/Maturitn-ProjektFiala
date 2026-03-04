@@ -242,10 +242,13 @@
           Máte dotaz nebo se chcete přidat do týmu? Napište nám přes formulář níže!
         </p>
     
-        <form>
-          <input type="text" name="jmeno" placeholder="Vaše jméno" required>
-          <input type="email" name="email" placeholder="Váš e-mail" required>
-          <textarea name="zprava" placeholder="Vaše zpráva" rows="5" required></textarea>
+        <form id="contactForm">
+          <input type="text" id="jmeno" placeholder="Vaše jméno" required>
+          <input type="email" id="email" placeholder="Váš e-mail" required>
+          <textarea id="zprava" placeholder="Vaše zpráva" rows="5" required></textarea>
+        
+          <p id="errorMessage" style="color:#ff8a8a; display:none;"></p>
+        
           <button type="submit">Odeslat</button>
         </form>
       </section>
@@ -263,5 +266,46 @@
       nav.classList.toggle("active");
     });
   </script>
+  <script>
+    const form = document.getElementById("contactForm");
+    const jmeno = document.getElementById("jmeno");
+    const email = document.getElementById("email");
+    const zprava = document.getElementById("zprava");
+    const error = document.getElementById("errorMessage");
+    
+    form.addEventListener("submit", function(e) {
+    
+      error.style.display = "none";
+      error.textContent = "";
+    
+      const name = jmeno.value.trim();
+      const mail = email.value.trim();
+      const msg = zprava.value.trim();
+    
+      if (name.length < 2) {
+        e.preventDefault();
+        error.style.display = "block";
+        error.textContent = "Jméno musí mít alespoň 2 znaky.";
+        return;
+      }
+    
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+      if (!emailRegex.test(mail)) {
+        e.preventDefault();
+        error.style.display = "block";
+        error.textContent = "Zadejte platný e-mail.";
+        return;
+      }
+    
+      if (msg.length < 10) {
+        e.preventDefault();
+        error.style.display = "block";
+        error.textContent = "Zpráva musí mít alespoň 10 znaků.";
+        return;
+      }
+    
+    });
+    </script>
 </body>
 </html>
