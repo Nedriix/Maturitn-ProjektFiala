@@ -1,0 +1,66 @@
+services:
+  # Webový server Nginx
+  webserver:
+    image: nginx:alpine
+    container_name: projekt-fiala-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - app-network
+
+  # PHP procesor (pro budoucí PHP skripty)
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/dockerfile
+    container_name: projekt-fiala-php
+    restart: unless-stopped
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    networks:
+      - app-network
+
+  # Databáze MariaDB
+  db:
+    image: mariadb:10.11
+    container_name: projekt-fiala-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: esport_team
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app-network
+
+  # Nástroj pro správu databáze (phpMyAdmin)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: projekt-fiala-pma
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
