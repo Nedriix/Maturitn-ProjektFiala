@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Můj profil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .current-photo {
+            max-width: 150px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MŮJ PROFIL</div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="../index.html">Zpět na web</a></li>
+                <li><a href="#" id="logoutBtn">Odhlásit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="admin-panel" style="max-width: 800px; margin: 0 auto;">
+        <h1>Úprava profilu</h1>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">Zde si můžeš upravit svůj medailonek, fotku a sociální sítě.</p>
+
+        <form id="profileForm" class="admin-form">
+            <div id="photoContainer"></div>
+            
+            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Nová fotka </label>
+            <input type="file" id="photo" accept="image/*" style="margin-bottom: 20px;">
+            
+            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">O mně (Popisek)</label>
+            <textarea id="desc" rows="5" placeholder="Napiš něco o sobě..."></textarea>
+            
+            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Instagram URL</label>
+            <input type="text" id="instagram" placeholder="https://instagram.com/...">
+            
+            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Twitch URL</label>
+            <input type="text" id="twitch" placeholder="https://twitch.tv/...">
+            
+            <button type="submit" style="margin-top: 15px;">Uložit změny</button>
+        </form>
+    </section>
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/hrac/dashboard.js"></script>
+</body>
+</html>
