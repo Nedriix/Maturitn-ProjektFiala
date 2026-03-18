@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Admin Dashboard - SPŠT E-sport</title>
+      <link rel="stylesheet" href="../css/style.css">
+   </head>
+   <body>
+      <header>
+         <div class="logo">SPŠT E-sport ADMIN</div>
+         <div class="menu-toggle" id="menu-toggle">☰</div>
+         <nav id="nav-menu">
+            <ul>
+               <li><a href="../index.html">Zpět na web</a></li>
+               <li><a href="#" id="logoutBtn">Odhlásit</a></li>
+            </ul>
+         </nav>
+      </header>
+      <section class="admin-panel">
+         <h1>Vítejte v administraci</h1>
+         <p style="color: var(--text-muted); margin-bottom: 30px;">Vyberte akci, kterou chcete provést:</p>
+         <div class="admin-grid">
+            <div class="admin-card">
+               <h3>Přidat hráče</h3>
+               <p>Přidání nového hráče do týmové soupisky včetně profilovky.</p>
+               <a href="pridani-hrace.html">
+               <button>Přejít</button>
+               </a>
+            </div>
+            <div class="admin-card">
+               <h3>Správa článků</h3>
+               <p>Vytváření, formátování, úprava a mazání článků na webu.</p>
+               <a href="sprava-clanku.html">
+               <button>Spravovat články</button>
+               </a>
+            </div>
+            <div class="admin-card">
+               <h3>Správa Play-off</h3>
+               <p>Aktualizace postupujících týmů v turnajovém pavoukovi.</p>
+               <a href="sprava-playoff.html">
+               <button>Upravit pavouka</button>
+               </a>
+            </div>
+            <div class="admin-card">
+               <h3>Správa zápasů</h3>
+               <p>Plánování zápasů, psaní výsledků a reportů od hráčů.</p>
+               <a href="sprava-zapasu.html">
+               <button>Spravovat zápasy</button>
+               </a>
+            </div>
+            <div class="admin-card">
+               <h3>Doručené zprávy</h3>
+               <p>Zobrazit dotazy a vzkazy od fanoušků z webu.</p>
+               <a href="zpravy.html">
+               <button>Otevřít zprávy</button>
+               </a>
+            </div>
+            <div class="admin-card" id="adminOnlyCard" style="display: none; border: 1px solid rgba(255, 82, 82, 0.4);">
+               <h3 style="color: #ff5252;">Správa uživatelů</h3>
+               <p>Přidávání editorů a správa administrátorských práv.</p>
+               <a href="sprava-uzivatelu.html">
+               <button style="background-color: #ff5252;">Spravovat účty</button>
+               </a>
+            </div>
+            <div class="admin-card" id="adminOnlyPlayersCard" style="display: none; border: 1px solid rgba(255, 82, 82, 0.4);">
+               <h3 style="color: #ff5252;">Správa hráčů</h3>
+               <p>Přidávání, úprava profilů, hesel a mazání hráčů v týmu.</p>
+               <a href="sprava-hracu.html">
+               <button style="background-color: #ff5252;">Spravovat hráče</button>
+               </a>
+            </div>
+         </div>
+      </section>
+      <script src="../js/navbar.js"></script>
+      <script src="../js/admin/dashboard.js"></script>
+   </body>
+</html>

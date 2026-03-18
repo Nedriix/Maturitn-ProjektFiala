@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Přidat hráče</title>
+      <link rel="stylesheet" href="../css/style.css">
+   </head>
+   <body>
+      <header>
+         <div class="logo">SPŠT E-sport ADMIN</div>
+         <div class="menu-toggle" id="menu-toggle">☰</div>
+         <nav id="nav-menu">
+            <ul>
+               <li><a href="dashboard.html">Dashboard</a></li>
+               <li><a href="../index.html">Web</a></li>
+               <li><a id="logoutBtn" href="#">Odhlásit</a></li>
+            </ul>
+         </nav>
+      </header>
+      <section class="admin-panel">
+         <h1>Přidat hráče</h1>
+         <form id="playerForm" class="admin-form">
+            <input type="text" id="name" placeholder="Jméno hráče" required>
+            <input type="email" id="email" placeholder="Přihlašovací e-mail hráče" required>
+            <input type="text" id="password" placeholder="Dočasné heslo pro hráče" required>
+            <input type="text" id="role" placeholder="Role (např. IGL / Captain)" required>
+            <input type="text" id="game" placeholder="Hra (např. CS2, LoL)" required>
+            <input type="file" id="photo" accept="image/*">
+            <textarea id="desc" rows="5" placeholder="Popis hráče"></textarea>
+            <input type="text" id="instagram" placeholder="Instagram odkaz">
+            <input type="text" id="twitch" placeholder="Twitch odkaz">
+            <button type="submit">Přidat hráče</button>
+         </form>
+      </section>
+      <script src="../js/navbar.js"></script>
+      <script src="../js/admin/pridani-hrace.js"></script>
+   </body>
+</html>

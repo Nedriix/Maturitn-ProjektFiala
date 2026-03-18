@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Správa článků - Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    
+    <style>
+        .users-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .users-table th, .users-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        .users-table th { color: var(--accent-hover); }
+        .action-btn { padding: 6px 10px; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; font-size: 0.8rem;}
+        .btn-edit { background: #b388ff; color: #fff; margin-right: 5px; }
+        .btn-delete { background: #ff5252; color: #fff; }
+        
+        #articleFormContainer { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; margin-top: 30px; border: 1px solid rgba(255,255,255,0.1); display: none; }
+        
+        /* Přizpůsobení Quill editoru pro tmavý design */
+        .ql-toolbar.ql-snow { background: #e0e0e0; border-radius: 8px 8px 0 0; border: none; }
+        .ql-container.ql-snow { border: 1px solid rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; background: rgba(0,0,0,0.2); color: #fff; font-family: 'Poppins', sans-serif; font-size: 1rem; height: 300px; }
+        .ql-editor p { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SPŠT E-sport ADMIN</div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <nav id="nav-menu">
+            <ul>
+               <li><a href="dashboard.html">Dashboard</a></li>
+               <li><a href="../index.html">Web</a></li>
+               <li><a id="logoutBtn" href="#">Odhlásit</a></li>
+            </ul>
+         </nav>
+    </header>
+
+    <section class="admin-panel" style="max-width: 1000px; margin: 0 auto;">
+        <h1>Správa článků</h1>
+        
+        <button onclick="openForm()" style="margin-bottom: 20px;">+ Napsat nový článek</button>
+
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titulek</th>
+                    <th>Vytvořeno</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tbody id="articlesList"></tbody>
+        </table>
+
+        <div id="articleFormContainer">
+            <h3 id="formTitle" style="color: var(--accent-hover); margin-bottom: 15px;">Přidat článek</h3>
+            <form id="articleForm" class="admin-form">
+                <input type="hidden" id="edit_id">
+                
+                <input type="text" id="title" placeholder="Titulek článku" required style="width: 100%; margin-bottom: 15px;">
+                
+                <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Titulní obrázek (nahrajte nový pro změnu)</label>
+                <input type="file" id="image" accept="image/*" style="width: 100%; margin-bottom: 15px;">
+                
+                <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Obsah článku:</label>
+                <div id="editor-container"></div>
+                
+                <div style="margin-top: 20px;">
+                    <button type="submit">Uložit článek</button>
+                    <button type="button" onclick="closeForm()" style="background: #555; margin-left: 10px;">Zrušit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/admin/sprava-clanku.js"></script>
+</body>
+</html>

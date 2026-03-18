@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Doručené zprávy - Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .msg-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .msg-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .msg-author { font-weight: 800; color: var(--accent-hover); }
+        .msg-date { font-size: 0.85rem; color: var(--text-muted); }
+        .msg-body { white-space: pre-wrap; margin-bottom: 15px; }
+        .msg-email { color: var(--accent); font-size: 0.9rem; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">PROJEKT ZPRÁVY</div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <nav id="nav-menu">
+            <ul>
+               <li><a href="dashboard.html">Dashboard</a></li>
+               <li><a href="../index.html">Web</a></li>
+               <li><a id="logoutBtn" href="#">Odhlásit</a></li>
+            </ul>
+         </nav>
+    </header>
+
+    <section class="admin-panel" style="max-width: 900px; margin: 0 auto;">
+        <h1>Doručené zprávy</h1>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">Zde najdete dotazy z kontaktního formuláře.</p>
+
+        <div id="messagesList">
+            </div>
+    </section>
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/admin/zpravy.js"></script>
+</body>
+</html>

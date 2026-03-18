@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Správa uživatelů</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .users-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        .users-table th, .users-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        .users-table th { color: var(--accent-hover); }
+        .role-badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+        .role-admin { background: rgba(255, 82, 82, 0.2); color: #ff5252; }
+        .role-editor { background: rgba(126, 87, 194, 0.2); color: #b388ff; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SPŠT E-sport ADMIN</div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <nav id="nav-menu">
+            <ul>
+               <li><a href="dashboard.html">Dashboard</a></li>
+               <li><a href="../index.html">Web</a></li>
+               <li><a id="logoutBtn" href="#">Odhlásit</a></li>
+            </ul>
+         </nav>
+    </header>
+
+    <section class="admin-panel" style="max-width: 800px; margin: 0 auto;">
+        <h1>Správa uživatelů</h1>
+        
+        <form id="userForm" class="admin-form">
+            <h3>Vytvořit nový účet</h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <input type="email" id="email" placeholder="E-mail (např. editor@spst.cz)" required style="flex: 1;">
+                <input type="password" id="password" placeholder="Heslo" required style="flex: 1;">
+                <select id="role" style="flex: 1; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);">
+                    <option value="editor">Editor (může přidávat obsah)</option>
+                    <option value="admin">Admin (plný přístup)</option>
+                </select>
+            </div>
+            <button type="submit" style="margin-top: 15px;">Vytvořit uživatele</button>
+        </form>
+
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>E-mail</th>
+                    <th>Role</th>
+                    <th>Vytvořeno</th>
+                </tr>
+            </thead>
+            <tbody id="usersList">
+                </tbody>
+        </table>
+    </section>
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/admin/sprava-uzivatelu.js"></script>
+</body>
+</html>

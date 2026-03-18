@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+   <head>
+      <meta charset="UTF-8">
+      </meta>
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0"
+         >
+      </meta>
+      <title>Admin přihlášení</title>
+      <link
+         rel="stylesheet"
+         href="../css/style.css"
+         >
+      </link>
+   </head>
+   <body>
+      <header>
+         <div class="logo">SPŠT E-sport ADMIN</div>
+         <nav>
+            <ul>
+               <li><a href="../index.html">Zpět na web</a></li>
+            </ul>
+         </nav>
+      </header>
+      <section class="auth-page">
+         <div class="auth-card">
+            <h1>Admin přihlášení</h1>
+            <form id="loginForm">
+               <div class="auth-field">
+                  <label>Email</label>
+                  <input type="email" id="email" placeholder="admin@spst.cz" required>
+               </div>
+               <div class="auth-field">
+                  <label>Heslo</label>
+                  <input type="password" id="password" placeholder="••••••••" required>
+               </div>
+               <p id="errorMsg" style="color: #ff8a8a; display: none; font-size: 0.9rem; margin-bottom: 10px;"></p>
+               <button type="submit" class="auth-btn">Přihlásit se</button>
+            </form>
+         </div>
+      </section>
+      <script src="../js/admin/login.js"></script>
+   </body>
+</html>
