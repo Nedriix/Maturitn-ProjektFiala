@@ -10,7 +10,7 @@ $name = $data['name'] ?? '';
 $email = $data['email'] ?? '';
 $message = $data['message'] ?? '';
 
-// Základní backendová kontrola
+// backendová kontrola
 if (empty($name) || empty($email) || empty($message)) {
     http_response_code(400);
     echo json_encode(['error' => 'Vyplňte prosím všechna pole.']);
