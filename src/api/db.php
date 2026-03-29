@@ -1,9 +1,9 @@
 <?php
 // API endpoint: db.php
-$host = 'db'; // Jméno kontejneru z docker-compose
+$host = 'localhost';
 $db   = 'esport_team';
-$user = 'user';
-$pass = 'password';
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
