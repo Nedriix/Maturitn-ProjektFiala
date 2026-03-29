@@ -59,10 +59,6 @@ Aktuální verze projektu je full-stack aplikace:
 │   └── hrac/*.js
 ├── css/
 │   └── style.css
-├── docker-compose.yml
-├── docker/
-│   ├── nginx/conf.d/default.conf
-│   └── php/{dockerfile,custom.ini}
 ├── database.sql
 └── uploads/
 ```
