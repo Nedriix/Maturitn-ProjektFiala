@@ -5,8 +5,6 @@ Webová aplikace školního e-sport týmu SPŠT.
 Aktuální verze projektu je full-stack aplikace:
 - frontend: HTML/CSS/JavaScript
 - backend: PHP (REST-like API + session autentizace)
-- databáze: MariaDB
-- lokální běh: Docker Compose (Nginx + PHP-FPM + MariaDB + phpMyAdmin)
 
 ## Co aplikace umí
 
@@ -25,9 +23,7 @@ Aktuální verze projektu je full-stack aplikace:
 
 - HTML5, CSS3, JavaScript (vanilla)
 - PHP 8.3 (PDO, sessions, password_hash/password_verify)
-- MariaDB 10.11
-- Nginx (reverse proxy / web server)
-- Docker + Docker Compose
+
 
 ## Struktura projektu (zkráceně)
 
@@ -71,31 +67,6 @@ Aktuální verze projektu je full-stack aplikace:
 └── uploads/
 ```
 
-## Lokální spuštění (Docker)
-
-### 1) Požadavky
-
-- Docker Desktop (nebo Docker Engine + Docker Compose)
-
-### 2) Start projektu
-
-V kořeni projektu spusť:
-
-```bash
-docker compose -f docker-compose.yml up -d --build
-```
-
-### 3) Dostupné služby
-
-- Web: http://localhost:8080
-- phpMyAdmin: http://localhost:8081
-- MariaDB port: 3306
-
-Databázové přihlašovací údaje (Docker/dev):
-- DB: `esport_team`
-- User: `user`
-- Password: `password`
-- Root password: `rootpassword`
 
 ## Inicializace databáze
 
@@ -107,11 +78,6 @@ Možnost A (phpMyAdmin):
 3. Vyber databázi `esport_team`
 4. Importuj soubor `database.sql`
 
-Možnost B (CLI):
-
-```bash
-docker exec -i projekt-fiala-db mariadb -uroot -prootpassword esport_team < database.sql
-```
 
 ## Přihlášení a role
 
@@ -148,26 +114,6 @@ API je umístěné ve složce `api/`.
 - Zprávy/kontakt:
     - `send_contact.php`, `get_messages.php`, `delete_message.php`
 
-## Užitečné Docker příkazy
-
-Zastavení projektu:
-
-```bash
-docker compose down
-```
-
-Zastavení + smazání DB volume:
-
-```bash
-docker compose down -v
-```
-
-Pokud narazíš na konflikt názvu kontejneru, smaž staré kontejnery a spusť projekt znovu:
-
-```bash
-docker rm -f projekt-fiala-web projekt-fiala-php projekt-fiala-db projekt-fiala-pma
-docker compose up -d --build
-```
 
 Jakub Fiala - maturitní projekt, SPŠT
 
