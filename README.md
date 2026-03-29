@@ -25,43 +25,7 @@ Aktuální verze projektu je full-stack aplikace:
 - PHP 8.3 (PDO, sessions, password_hash/password_verify)
 
 
-## Struktura projektu (zkráceně)
 
-```
-.
-├── index.html
-├── hraci.html
-├── clanky.html
-├── clanek.html
-├── login.html
-├── admin/
-│   ├── index.html
-│   ├── dashboard.html
-│   ├── sprava-clanku.html
-│   ├── sprava-hracu.html
-│   ├── sprava-zapasu.html
-│   ├── sprava-playoff.html
-│   ├── sprava-uzivatelu.html
-│   ├── pridani-hrace.html
-│   └── zpravy.html
-├── hrac/
-│   ├── index.html
-│   └── dashboard.html
-├── api/
-│   ├── db.php
-│   ├── login.php
-│   ├── check_auth.php
-│   ├── get_*.php / add_*.php / update_*.php / delete_*.php
-│   └── ...
-├── js/
-│   ├── *.js
-│   ├── admin/*.js
-│   └── hrac/*.js
-├── css/
-│   └── style.css
-├── database.sql
-└── uploads/
-```
 
 
 ## Inicializace databáze
